@@ -27,6 +27,7 @@ class MoviesController < ApplicationController
       if @movie.save
         format.html { redirect_to @movie, notice: "Movie was successfully created." }
         format.json { render :show, status: :created, location: @movie }
+        format.js { render "movies/create.js.erb" } 
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @movie.errors, status: :unprocessable_entity }
@@ -40,6 +41,7 @@ class MoviesController < ApplicationController
       if @movie.update(movie_params)
         format.html { redirect_to @movie, notice: "Movie was successfully updated." }
         format.json { render :show, status: :ok, location: @movie }
+        
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @movie.errors, status: :unprocessable_entity }
