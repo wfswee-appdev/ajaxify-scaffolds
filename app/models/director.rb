@@ -12,6 +12,6 @@
 #
 class Director < ApplicationRecord
 
-  has_many :movies, foreign_key: :director_id
+  has_many :movies, dependent: :destroy
   
 end
