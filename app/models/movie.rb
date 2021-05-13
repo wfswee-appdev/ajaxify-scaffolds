@@ -20,6 +20,7 @@
 #
 #  fk_rails_...  (director_id => directors.id)
 #
+#
 class Movie < ApplicationRecord
   belongs_to :director
   has_many :characters, dependent: :destroy
